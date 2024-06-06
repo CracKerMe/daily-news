@@ -6,8 +6,7 @@ import { PcIcon, MobileIcon } from "@/components/icons";
 import { Image } from "@nextui-org/image";
 
 async function getNewsDetail(name: string) {
-  // const res = await fetch(`https://daily.zeabur.app/${name}`);
-  const res = await fetch(`daily-hot.zeabur.internal:8080/${name}`);
+  const res = await fetch(`https://daily.zeabur.app/${name}`);
   if (!res.ok) return { news: null, error: new Error("Failed to fetch data api") };
   const response = await res?.json();
   if (response.code === 200) {
